@@ -77,11 +77,11 @@ int main() {
 
     time = 0;
 
+    prv = SDL_GetTicks();
 
     while (handleEvents()) {
         SDL_SetRenderDrawColor(renderer, 150, 150, 150, 200);
         SDL_RenderClear(renderer);
-        prv = SDL_GetTicks();
         //...........................................................................................
         //Program Starts Here
         //...........................................................................................
@@ -126,11 +126,11 @@ int main() {
         //...........................................................................................
         //...........................................................................................
 
-        time += (SDL_GetTicks() - prv);
+        time = SDL_GetTicks();
         if( T.tank[0].score >= score || T.tank[1].score >= score){
             mnu.NewGame = 1; mnu.LoadStart = 0; mnu.Exit = 0;
             while (handleEndMenu(&mnu)){
-                DrawEndMenu(&renderer, T, mnu, time);
+                DrawEndMenu(&renderer, T, mnu, time - prv);
             }
             if(mnu.ForceExit || mnu.Exit){quit_window(&window); return 0;}
             if(mnu.LoadStart){LoadGame(&T, &mnu, &score, &time);}
