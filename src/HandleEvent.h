@@ -6,6 +6,8 @@
 #define ALTERTANK_HANDLEEVENT_H
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
+#include "Graph.h"
+
 
 
 int handleEvents() {
@@ -13,26 +15,112 @@ int handleEvents() {
     while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT)
             return 0;
+
     }
     return 1;
 }
 
-void SetColor(Tanks* T){
-    T->tank[0].clr.r = 0;
-    T->tank[0].clr.g = 0;
-    T->tank[0].clr.b = 100;
+int handleStartMenu(Menu* mnu){
+    SDL_Event event;
+    SDL_PollEvent(&event);
+        if(event.type == SDL_QUIT) {
+            mnu->ForceExit = 1;
+            return 0;
+        }
+        if (event.type == SDL_KEYDOWN){
+            SDL_Keycode key = event.key.keysym.sym ;
+            if ( key == SDLK_RETURN)
+                return 0;
+            if (key == SDLK_DOWN || key == SDLK_UP){
+                mnu->LoadStart = 1 - mnu->LoadStart;
+                mnu->NewGame = 1 - mnu->NewGame;
+            }
+        }
+        return 1;
 
-    T->tank[1].clr.r = 100;
-    T->tank[1].clr.g = 0;
-    T->tank[1].clr.b = 0;
-
-    T->tank[2].clr.r = 0;
-    T->tank[2].clr.g = 100;
-    T->tank[2].clr.b = 0;
-
-    T->tank[3].clr.r = 100;
-    T->tank[3].clr.g = 100;
-    T->tank[3].clr.b = 0;
 }
+
+int handleMinMenu(Menu* mnu){
+    SDL_Event event;
+    SDL_PollEvent(&event);
+    if(event.type == SDL_QUIT) {
+        mnu->ForceExit = 1;
+        return 0;
+    }
+
+    if (event.type == SDL_KEYUP){
+        SDL_Keycode key = event.key.keysym.sym ;
+        if ( key == SDLK_ESCAPE ) {
+            mnu->Exit = mnu->SaveGame = 0;
+            return 0;
+        }
+    }
+
+    if (event.type == SDL_KEYDOWN){
+        SDL_Keycode key = event.key.keysym.sym ;
+        if ( key == SDLK_RETURN ) {
+            return 0;
+        }
+        if (key == SDLK_DOWN){
+
+
+            if(!(mnu->Exit || mnu->SaveGame)){
+                mnu->SaveGame = 1;
+                mnu->Exit = 0;
+                return 1;
+            }
+            if(mnu->Exit){
+                mnu->SaveGame = 0;
+                mnu->Exit = 0;
+                return 1;
+            }
+            if(mnu->SaveGame){
+                mnu->SaveGame = 0;
+                mnu->Exit = 1;
+                return 1;
+            }
+        }
+        if (key == SDLK_UP){
+
+            if(!(mnu->Exit || mnu->SaveGame)){
+                mnu->SaveGame = 0;
+                mnu->Exit = 1;
+                return 1;
+            }
+            if(mnu->Exit){
+                mnu->SaveGame = 1;
+                mnu->Exit = 0;
+                return 1;
+            }
+            if(mnu->SaveGame){
+                mnu->SaveGame = 0;
+                mnu->Exit = 0;
+                return 1;
+            }
+
+        }
+    }
+    return 1;
+}
+
+int handleSelectMap(Menu* mnu){
+    SDL_Event event;
+    SDL_PollEvent(&event);
+    if(event.type == SDL_QUIT) {
+        mnu->ForceExit = 1;
+        return 0;
+    }
+    if (event.type == SDL_KEYDOWN){
+        SDL_Keycode key = event.key.keysym.sym ;
+        if ( key == SDLK_RETURN)
+            return 0;
+        if (key == SDLK_LEFT || key == SDLK_RIGHT){
+            mnu->promap = 1 - mnu->promap;
+            mnu->simplemap = 1 - mnu->simplemap;
+        }
+    }
+    return 1;
+}
+
 
 #endif //ALTERTANK_HANDLEEVENT_H

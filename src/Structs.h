@@ -4,6 +4,15 @@
 
 #ifndef ALTERTANK_STRUCTS_H
 #define ALTERTANK_STRUCTS_H
+#include <SDL2/SDL.h>
+#include <SDL2/SDL2_gfxPrimitives.h>
+
+typedef struct {
+    int exist;
+    int x;
+    int y;
+    unsigned long long int time;
+}Pop;
 
 typedef struct {
     int r;
@@ -14,12 +23,23 @@ typedef struct {
 typedef struct{
     double x;
     double y;
-    int angle;
+    double angle;
     unsigned long long int LastShot;
     int haveShoten;
     int alphax;
     int alphay;
 }Bullet;
+
+typedef struct {
+    int exist;
+    int x;
+    int y;
+    double angle;
+    int shoot;
+    int Xend;
+    int Yend;
+    unsigned long long int time;
+}Laser;
 
 
 typedef struct {
@@ -50,6 +70,9 @@ typedef struct {
     int haveTouchedwall;
     MovePermision Permition;
     unsigned long long int lastTime;
+    unsigned long long int ShootTime;
+    int score;
+    Laser laser;
 }Tank;
 
 
@@ -77,6 +100,21 @@ typedef struct {
     Wall wall;
 }Map;
 
+typedef struct {
+    int exist;
+    unsigned long long int time;
+}Escape;
+
+typedef struct {
+    char maptype[10];
+    int LoadStart;
+    int NewGame;
+    int ForceExit;
+    int promap;
+    int simplemap;
+    int SaveGame;
+    int Exit;
+}Menu;
 
 
 #endif //ALTERTANK_STRUCTS_H

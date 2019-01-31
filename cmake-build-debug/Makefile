@@ -48,10 +48,10 @@ RM = /home/sadra/Desktop/clion-2018.3.1/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sadra/CLionProjects/Phase1
+CMAKE_SOURCE_DIR = /home/sadra/CLionProjects/AlterTank
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sadra/CLionProjects/Phase1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/sadra/CLionProjects/AlterTank/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sadra/CLionProjects/Phase1/cmake-build-debug/CMakeFiles /home/sadra/CLionProjects/Phase1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sadra/CLionProjects/AlterTank/cmake-build-debug/CMakeFiles /home/sadra/CLionProjects/AlterTank/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sadra/CLionProjects/Phase1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sadra/CLionProjects/AlterTank/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Phase1
+# Target rules for targets named AlterTank
 
 # Build rule for target.
-Phase1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Phase1
-.PHONY : Phase1
+AlterTank: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 AlterTank
+.PHONY : AlterTank
 
 # fast build rule for target.
-Phase1/fast:
-	$(MAKE) -f CMakeFiles/Phase1.dir/build.make CMakeFiles/Phase1.dir/build
-.PHONY : Phase1/fast
+AlterTank/fast:
+	$(MAKE) -f CMakeFiles/AlterTank.dir/build.make CMakeFiles/AlterTank.dir/build
+.PHONY : AlterTank/fast
 
 src/main.o: src/main.c.o
 
@@ -129,7 +129,7 @@ src/main.o: src/main.c.o
 
 # target to build an object file
 src/main.c.o:
-	$(MAKE) -f CMakeFiles/Phase1.dir/build.make CMakeFiles/Phase1.dir/src/main.c.o
+	$(MAKE) -f CMakeFiles/AlterTank.dir/build.make CMakeFiles/AlterTank.dir/src/main.c.o
 .PHONY : src/main.c.o
 
 src/main.i: src/main.c.i
@@ -138,7 +138,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	$(MAKE) -f CMakeFiles/Phase1.dir/build.make CMakeFiles/Phase1.dir/src/main.c.i
+	$(MAKE) -f CMakeFiles/AlterTank.dir/build.make CMakeFiles/AlterTank.dir/src/main.c.i
 .PHONY : src/main.c.i
 
 src/main.s: src/main.c.s
@@ -147,7 +147,7 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	$(MAKE) -f CMakeFiles/Phase1.dir/build.make CMakeFiles/Phase1.dir/src/main.c.s
+	$(MAKE) -f CMakeFiles/AlterTank.dir/build.make CMakeFiles/AlterTank.dir/src/main.c.s
 .PHONY : src/main.c.s
 
 # Help Target
@@ -157,7 +157,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... Phase1"
+	@echo "... AlterTank"
 	@echo "... edit_cache"
 	@echo "... src/main.o"
 	@echo "... src/main.i"

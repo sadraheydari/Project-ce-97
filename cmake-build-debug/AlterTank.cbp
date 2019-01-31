@@ -92,6 +92,9 @@
 		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/Move.h">
 			<Option target="AlterTank"/>
 		</Unit>
+		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/SelectKeyboard.h">
+			<Option target="AlterTank"/>
+		</Unit>
 		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/Structs.h">
 			<Option target="AlterTank"/>
 		</Unit>
