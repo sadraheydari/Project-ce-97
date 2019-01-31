@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/sadra/CLionProjects/AlterTank/cmake-build-debug"/>
+				<Option working_dir="/home/sadra/CLionProjects/Phase1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/sadra/CLionProjects/AlterTank/cmake-build-debug"/>
+				<Option working_dir="/home/sadra/CLionProjects/Phase1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="AlterTank">
-				<Option output="/home/sadra/CLionProjects/AlterTank/cmake-build-debug/AlterTank" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/sadra/CLionProjects/AlterTank/cmake-build-debug"/>
+				<Option output="/home/sadra/CLionProjects/Phase1/cmake-build-debug/AlterTank" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sadra/CLionProjects/Phase1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 AlterTank"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 AlterTank"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="AlterTank/fast">
-				<Option output="/home/sadra/CLionProjects/AlterTank/cmake-build-debug/AlterTank" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/sadra/CLionProjects/AlterTank/cmake-build-debug"/>
+				<Option output="/home/sadra/CLionProjects/Phase1/cmake-build-debug/AlterTank" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sadra/CLionProjects/Phase1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,45 +63,45 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 AlterTank/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 AlterTank/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/sadra/CLionProjects/AlterTank/cmake-build-debug"/>
+				<Option working_dir="/home/sadra/CLionProjects/Phase1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/AlterTank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadra/CLionProjects/Phase1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/Graph.h">
+		<Unit filename="/home/sadra/CLionProjects/Phase1/src/Graph.h">
 			<Option target="AlterTank"/>
 		</Unit>
-		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/HandleEvent.h">
+		<Unit filename="/home/sadra/CLionProjects/Phase1/src/HandleEvent.h">
 			<Option target="AlterTank"/>
 		</Unit>
-		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/Logic.h">
+		<Unit filename="/home/sadra/CLionProjects/Phase1/src/Logic.h">
 			<Option target="AlterTank"/>
 		</Unit>
-		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/Move.h">
+		<Unit filename="/home/sadra/CLionProjects/Phase1/src/Move.h">
 			<Option target="AlterTank"/>
 		</Unit>
-		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/SelectKeyboard.h">
+		<Unit filename="/home/sadra/CLionProjects/Phase1/src/SelectKeyboard.h">
 			<Option target="AlterTank"/>
 		</Unit>
-		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/Structs.h">
+		<Unit filename="/home/sadra/CLionProjects/Phase1/src/Structs.h">
 			<Option target="AlterTank"/>
 		</Unit>
-		<Unit filename="/home/sadra/CLionProjects/AlterTank/src/main.c">
+		<Unit filename="/home/sadra/CLionProjects/Phase1/src/main.c">
 			<Option target="AlterTank"/>
 		</Unit>
-		<Unit filename="/home/sadra/CLionProjects/AlterTank/CMakeLists.txt">
+		<Unit filename="/home/sadra/CLionProjects/Phase1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

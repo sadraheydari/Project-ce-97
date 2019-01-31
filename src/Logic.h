@@ -12,6 +12,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include "Move.h"
+#include "HandleEvent.h"
 
 
 Map GetMap(Menu mnu){
@@ -344,17 +345,19 @@ void RefreshGame(Tanks* T, Map map){
     }
 }
 
-void SaveGame(Tanks T, Menu mnu){
+void SaveGame(Tanks T, Menu mnu, int score, int time){
     FILE* sve = fopen("Data.txt", "w");
     if(mnu.simplemap){fprintf(sve, "sim\n");}
     else if(mnu.promap){fprintf(sve, "pro\n");}
     fprintf(sve, "%d %d %f %f %f\n", T.tank[0].exist, T.tank[0].Radius, T.tank[0].x, T.tank[0].y, T.tank[0].angle);
     fprintf(sve, "%d %d %f %f %f\n", T.tank[1].exist, T.tank[1].Radius, T.tank[1].x, T.tank[1].y, T.tank[1].angle);
     fprintf(sve, "%d\n%d\n", T.tank[0].score, T.tank[1].score);
+    fprintf(sve, "%d\n", score);
+    fprintf(sve, "%d\n", time);
     fclose(sve);
 }
 
-void LoadGame(Tanks* T, Menu* mnu){
+void LoadGame(Tanks* T, Menu* mnu, int* score, int* time){
     char name[10];
 
     FILE* lod = fopen("Data.txt", "r");
@@ -365,8 +368,34 @@ void LoadGame(Tanks* T, Menu* mnu){
     fscanf(lod, "%d %d %lf %lf %lf", &(T->tank[1].exist), &(T->tank[1].Radius), &(T->tank[1].x), &(T->tank[1].y), &(T->tank[1].angle));
     fscanf(lod, "%d", &(T->tank[0].score));
     fscanf(lod, "%d", &(T->tank[1].score));
+    fscanf(lod, "%d", score);
+    fscanf(lod, "%d", time);
+}
 
+void NewGame(Tanks* T, Map map){
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 5; ++j) {
+            T->tank[i].bullet[j].haveShoten = 0;
+            T->tank[i].bullet[i].alphax = 1;
+            T->tank[i].bullet[i].alphay = 1;
+        }
+        T->tank[i].exist = 0;
+        T->tank[i].Radius = 20;
+        T->tank[i].x = T->tank[i].y = -50;
+    }
 
+    for (int k = 0; k < T->Number; ++k) {
+        T->tank[k].exist = 1;
+        T->tank[k].ShootTime = 0;
+        T->tank[k].score = 0;
+        T->tank[k].haveTouchedwall = 1;
+        while (T->tank[k].haveTouchedwall){
+            T->tank[k].x = rand() % (map.dx * map.scale);
+            T->tank[k].y = rand() % (map.dy * map.scale);
+            T->tank[k].angle = rand() % 57;
+            TankTouchWall(T, map.wall);
+        }
+    }
 }
 
 void SetPopUp(Pop* p, Wall wall){

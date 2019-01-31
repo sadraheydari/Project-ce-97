@@ -27,13 +27,14 @@ int handleStartMenu(Menu* mnu){
             mnu->ForceExit = 1;
             return 0;
         }
-        if (event.type == SDL_KEYDOWN){
+        if (event.type == SDL_KEYUP){
             SDL_Keycode key = event.key.keysym.sym ;
             if ( key == SDLK_RETURN)
                 return 0;
             if (key == SDLK_DOWN || key == SDLK_UP){
                 mnu->LoadStart = 1 - mnu->LoadStart;
                 mnu->NewGame = 1 - mnu->NewGame;
+
             }
         }
         return 1;
@@ -110,7 +111,7 @@ int handleSelectMap(Menu* mnu){
         mnu->ForceExit = 1;
         return 0;
     }
-    if (event.type == SDL_KEYDOWN){
+    if (event.type == SDL_KEYUP){
         SDL_Keycode key = event.key.keysym.sym ;
         if ( key == SDLK_RETURN)
             return 0;
@@ -118,6 +119,89 @@ int handleSelectMap(Menu* mnu){
             mnu->promap = 1 - mnu->promap;
             mnu->simplemap = 1 - mnu->simplemap;
         }
+    }
+    return 1;
+}
+
+int handleEndMenu(Menu* mnu){
+    SDL_Event event;
+    SDL_PollEvent(&event);
+    if(event.type == SDL_QUIT) {
+        mnu->ForceExit = 1;
+        return 0;
+    }
+    if (event.type == SDL_KEYDOWN){
+        SDL_Keycode key = event.key.keysym.sym ;
+        if ( key == SDLK_RETURN)
+            return 0;
+        if (event.type == SDL_KEYDOWN){
+            SDL_Keycode key = event.key.keysym.sym ;
+            if ( key == SDLK_RETURN ) {
+                return 0;
+            }
+            if (key == SDLK_DOWN){
+
+                if(mnu->NewGame){
+                    mnu->NewGame  = 0;
+                    mnu->LoadStart= 1;
+                    mnu->Exit     = 0;
+                    return 1;
+                }
+                if(mnu->LoadStart){
+                    mnu->NewGame  = 0;
+                    mnu->LoadStart= 0;
+                    mnu->Exit     = 1;
+                    return 1;
+                }
+                if(mnu->Exit){
+                    mnu->NewGame  = 1;
+                    mnu->LoadStart= 0;
+                    mnu->Exit     = 0;
+                    return 1;
+                }
+            }
+            if (key == SDLK_UP){
+
+                if(mnu->NewGame){
+                    mnu->NewGame  = 0;
+                    mnu->LoadStart= 0;
+                    mnu->Exit     = 1;
+                    return 1;
+                }
+                if(mnu->LoadStart){
+                    mnu->NewGame  = 1;
+                    mnu->LoadStart= 0;
+                    mnu->Exit     = 0;
+                    return 1;
+                }
+                if(mnu->Exit){
+                    mnu->NewGame  = 0;
+                    mnu->LoadStart= 1;
+                    mnu->Exit     = 0;
+                    return 1;
+                }
+
+            }
+        }
+    }
+    return 1;
+}
+
+int handleSetScore(Menu* mnu, int* score){
+    SDL_Event event;
+    SDL_PollEvent(&event);
+    if(event.type == SDL_QUIT) {
+        mnu->ForceExit = 1;
+        return 0;
+    }
+    if (event.type == SDL_KEYDOWN){
+        SDL_Keycode key = event.key.keysym.sym ;
+        if ( key == SDLK_RETURN)
+            return 0;
+        if (key == SDLK_LEFT && *score > 1){(*score)--;}
+        if (key == SDLK_RIGHT){(*score)++;}
+        SDL_Delay(170);
+        return 1;
     }
     return 1;
 }

@@ -6,55 +6,57 @@
 
 #IncludeRegexTransform: 
 
-/home/sadra/CLionProjects/AlterTank/src/Graph.h
+/home/sadra/CLionProjects/Phase1/src/Graph.h
 SDL2/SDL.h
 -
 SDL2/SDL2_gfxPrimitives.h
 -
 Structs.h
-/home/sadra/CLionProjects/AlterTank/src/Structs.h
+/home/sadra/CLionProjects/Phase1/src/Structs.h
 Logic.h
-/home/sadra/CLionProjects/AlterTank/src/Logic.h
+/home/sadra/CLionProjects/Phase1/src/Logic.h
 
-/home/sadra/CLionProjects/AlterTank/src/HandleEvent.h
+/home/sadra/CLionProjects/Phase1/src/HandleEvent.h
 SDL2/SDL.h
 -
 SDL2/SDL2_gfxPrimitives.h
 -
 Graph.h
-/home/sadra/CLionProjects/AlterTank/src/Graph.h
+/home/sadra/CLionProjects/Phase1/src/Graph.h
 
-/home/sadra/CLionProjects/AlterTank/src/Logic.h
+/home/sadra/CLionProjects/Phase1/src/Logic.h
 stdio.h
 -
 stdlib.h
 -
 Structs.h
-/home/sadra/CLionProjects/AlterTank/src/Structs.h
+/home/sadra/CLionProjects/Phase1/src/Structs.h
 math.h
 -
 Graph.h
-/home/sadra/CLionProjects/AlterTank/src/Graph.h
+/home/sadra/CLionProjects/Phase1/src/Graph.h
 SDL2/SDL.h
 -
 SDL2/SDL2_gfxPrimitives.h
 -
 Move.h
-/home/sadra/CLionProjects/AlterTank/src/Move.h
+/home/sadra/CLionProjects/Phase1/src/Move.h
+HandleEvent.h
+/home/sadra/CLionProjects/Phase1/src/HandleEvent.h
 
-/home/sadra/CLionProjects/AlterTank/src/Move.h
+/home/sadra/CLionProjects/Phase1/src/Move.h
 SDL2/SDL.h
 -
 SDL2/SDL2_gfxPrimitives.h
 -
 
-/home/sadra/CLionProjects/AlterTank/src/Structs.h
+/home/sadra/CLionProjects/Phase1/src/Structs.h
 SDL2/SDL.h
 -
 SDL2/SDL2_gfxPrimitives.h
 -
 
-/home/sadra/CLionProjects/AlterTank/src/main.c
+/home/sadra/CLionProjects/Phase1/src/main.c
 stdio.h
 -
 stdlib.h
@@ -64,13 +66,13 @@ SDL2/SDL.h
 SDL2/SDL2_gfxPrimitives.h
 -
 Graph.h
-/home/sadra/CLionProjects/AlterTank/src/Graph.h
+/home/sadra/CLionProjects/Phase1/src/Graph.h
 HandleEvent.h
-/home/sadra/CLionProjects/AlterTank/src/HandleEvent.h
+/home/sadra/CLionProjects/Phase1/src/HandleEvent.h
 Structs.h
-/home/sadra/CLionProjects/AlterTank/src/Structs.h
+/home/sadra/CLionProjects/Phase1/src/Structs.h
 Move.h
-/home/sadra/CLionProjects/AlterTank/src/Move.h
+/home/sadra/CLionProjects/Phase1/src/Move.h
 Logic.h
-/home/sadra/CLionProjects/AlterTank/src/Logic.h
+/home/sadra/CLionProjects/Phase1/src/Logic.h
 

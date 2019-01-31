@@ -59,10 +59,10 @@ RM = /home/sadra/Desktop/clion-2018.3.1/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sadra/CLionProjects/AlterTank
+CMAKE_SOURCE_DIR = /home/sadra/CLionProjects/Phase1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sadra/CLionProjects/AlterTank/cmake-build-debug
+CMAKE_BINARY_DIR = /home/sadra/CLionProjects/Phase1/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/AlterTank.dir
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/sadra/CLionProjects/AlterTank/cmake-build-debug
 CMakeFiles/AlterTank.dir/all:
 	$(MAKE) -f CMakeFiles/AlterTank.dir/build.make CMakeFiles/AlterTank.dir/depend
 	$(MAKE) -f CMakeFiles/AlterTank.dir/build.make CMakeFiles/AlterTank.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sadra/CLionProjects/AlterTank/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target AlterTank"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sadra/CLionProjects/Phase1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target AlterTank"
 .PHONY : CMakeFiles/AlterTank.dir/all
 
 # Include target in all.
@@ -81,9 +81,9 @@ all: CMakeFiles/AlterTank.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AlterTank.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sadra/CLionProjects/AlterTank/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sadra/CLionProjects/Phase1/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/AlterTank.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sadra/CLionProjects/AlterTank/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sadra/CLionProjects/Phase1/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/AlterTank.dir/rule
 
 # Convenience name for target.

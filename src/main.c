@@ -11,6 +11,7 @@
 
 
 int main() {
+    int score, time = 0, start, prv;
     Map map;
     Tanks T;
     Pop power; power.exist = 0; power.time = 0;
@@ -47,55 +48,40 @@ int main() {
         DrawStartMenu(&renderer, mnu);
     }
     if(mnu.ForceExit){quit_window(&window); return 0;}
-    SDL_Delay(500);
+    SDL_Delay(200);
     //......................................................
 
 
 
     if(mnu.NewGame){ //New Game Starts ....................
-        for (int i = 0; i < 4; ++i) {
-            for (int j = 0; j < 5; ++j) {
-                T.tank[i].bullet[j].haveShoten = 0;
-                T.tank[i].bullet[i].alphax = 1;
-                T.tank[i].bullet[i].alphay = 1;
-            }
-            T.tank[i].exist = 0;
-            T.tank[i].Radius = 20;
-            T.tank[i].x = T.tank[i].y = -50;
-        }
 
         while (handleSelectMap(&mnu)){
             DrawSelectMapMenu(&renderer, mnu);
         }
         if(mnu.ForceExit){quit_window(&window); return 0;}
-
         map = GetMap(mnu);
+        score = 1;
 
-        for (int k = 0; k < T.Number; ++k) {
-            T.tank[k].exist = 1;
-            T.tank[k].ShootTime = 0;
-            T.tank[k].score = 0;
-            T.tank[k].haveTouchedwall = 1;
-            while (T.tank[k].haveTouchedwall){
-                T.tank[k].x = rand() % (map.dx * map.scale);
-                T.tank[k].y = rand() % (map.dy * map.scale);
-                T.tank[k].angle = rand() % 57;
-                TankTouchWall(&T, map.wall);
-            }
+        while (handleSetScore(&mnu, &score)){
+            DrawScoreMenu(&renderer, score);
         }
+        if(mnu.ForceExit){quit_window(&window); return 0;}
+        NewGame(&T, map);
 
     }//....................................................
 
     if(mnu.LoadStart){
-        LoadGame(&T, &mnu);
+        LoadGame(&T, &mnu, &score, &time);
         map = GetMap(mnu);
     }
+
+    time = 0;
 
 
     while (handleEvents()) {
         SDL_SetRenderDrawColor(renderer, 150, 150, 150, 200);
         SDL_RenderClear(renderer);
-
+        prv = SDL_GetTicks();
         //...........................................................................................
         //Program Starts Here
         //...........................................................................................
@@ -106,7 +92,7 @@ int main() {
                DrawMinMenu(&renderer, mnu, T);
             }
             esc.exist = 0;
-            if(mnu.SaveGame){ SaveGame(T, mnu);}
+            if(mnu.SaveGame){ SaveGame(T, mnu, score, time);}
             if(mnu.ForceExit || mnu.Exit || mnu.SaveGame){quit_window(&window); return 0;}
         }
 
@@ -139,6 +125,34 @@ int main() {
         DrawLaser(&renderer,&T);
         //...........................................................................................
         //...........................................................................................
+
+        time += (SDL_GetTicks() - prv);
+        if( T.tank[0].score >= score || T.tank[1].score >= score){
+            mnu.NewGame = 1; mnu.LoadStart = 0; mnu.Exit = 0;
+            while (handleEndMenu(&mnu)){
+                DrawEndMenu(&renderer, T, mnu, time);
+            }
+            if(mnu.ForceExit || mnu.Exit){quit_window(&window); return 0;}
+            if(mnu.LoadStart){LoadGame(&T, &mnu, &score, &time);}
+            if(mnu.NewGame){ //New Game Starts ....................
+                SDL_Delay(200);
+                while (handleSelectMap(&mnu)){
+                    DrawSelectMapMenu(&renderer, mnu);
+                }
+                if(mnu.ForceExit){quit_window(&window); return 0;}
+                map = GetMap(mnu);
+                score = 1;
+
+                while (handleSetScore(&mnu, &score)){
+                    DrawScoreMenu(&renderer, score);
+                }
+                if(mnu.ForceExit){quit_window(&window); return 0;}
+                NewGame(&T, map);
+                prv = SDL_GetTicks();
+                time = 0;
+            }//....................................................
+        }
+
 
         SDL_RenderPresent(renderer);
         SDL_Delay(1000 / FPS);

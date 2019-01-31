@@ -295,4 +295,91 @@ void DrawShotenLaser(SDL_Renderer** rend, Tanks*T){
     }
 }
 
+void DrawEndMenu(SDL_Renderer** rend, Tanks T, Menu mnu, int time){
+    SDL_SetRenderDrawColor(*rend, 50, 50, 50, 200);
+    SDL_RenderClear(*rend);
+    SDL_RenderSetScale(*rend, 4, 4);
+
+    char* buffer = malloc(sizeof(char) * 50);
+    thickLineRGBA(*rend, -10, 160/4, 690, 160/4, 20, 200, 200, 200, 200);
+    sprintf(buffer, "%d", T.tank[0].score);
+    stringRGBA(*rend, 255/4, 150/4, buffer, T.tank[0].clr.r, T.tank[0].clr.g, T.tank[0].clr.b, 200);
+    stringRGBA(*rend, 277/4, 150/4, " - ", 0, 0, 0, 200);
+    sprintf(buffer, "%d", T.tank[1].score);
+    stringRGBA(*rend, 360/4, 150/4, buffer, T.tank[1].clr.r, T.tank[1].clr.g, T.tank[1].clr.b, 200);
+
+    sprintf(buffer, "Game time: %d (s)", (time)/1000);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, 210/2, 500/2, buffer, 0, 0, 0, 200);
+
+    free(buffer);
+
+
+
+    SDL_RenderSetScale(*rend, 3, 3);
+    stringRGBA(*rend, 65, 10, " Game  Over", 200, 100, 100, 255);
+
+    SDL_RenderSetScale(*rend, 2, 2);
+
+    if(mnu.NewGame){
+        SDL_RenderSetScale(*rend, 1, 1);
+        roundedBoxRGBA(*rend, 130*2, 145*2, 200*2, 162*2, 10, 0, 0, 50, 255);
+        SDL_RenderSetScale(*rend, 2, 2);
+        stringRGBA(*rend, 135, 150, "New Game", 100, 200, 10, 200);
+    }
+    else{
+        stringRGBA(*rend, 135, 150, "New Game", 10, 100, 200, 200);
+    }
+
+
+    if(mnu.LoadStart){
+        SDL_RenderSetScale(*rend, 1, 1);
+        roundedBoxRGBA(*rend, 103*2, 165*2, 235*2, 182*2, 10, 0, 0, 50, 255);
+        SDL_RenderSetScale(*rend, 2, 2);
+        stringRGBA(*rend, 105, 170, "Start saved Game", 100, 200, 10, 200);
+    } else{
+        stringRGBA(*rend, 105, 170, "Start saved Game", 10, 100, 200, 200);
+    }
+
+
+    if(mnu.Exit){
+        SDL_RenderSetScale(*rend, 1, 1);
+        roundedBoxRGBA(*rend, 142*2, 185*2, 188*2, 202*2, 10, 0, 0, 50, 255);
+        SDL_RenderSetScale(*rend, 2, 2);
+        stringRGBA(*rend, 150, 190, "Exit", 100, 200, 10, 200);
+    } else{
+        stringRGBA(*rend, 150, 190, "Exit", 10, 100, 200, 200);
+    }
+
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    SDL_RenderPresent(*rend);
+}
+
+void DrawScoreMenu(SDL_Renderer** rend, int score){
+    SDL_SetRenderDrawColor(*rend, 50, 50, 50, 200);
+    SDL_RenderClear(*rend);
+    SDL_RenderSetScale(*rend, 3, 3);
+    stringRGBA(*rend, 75, 10, "ALTER-Tank", 200, 100, 100, 255);
+
+    char* buffer = malloc(sizeof(char) * 50);
+    SDL_RenderSetScale(*rend, 5, 5);
+    sprintf(buffer, "%d", score);
+    stringRGBA(*rend, 310/5, 300/5, buffer, 200, 200, 200, 200);
+
+    SDL_RenderSetScale(*rend, 1, 1);
+
+
+    filledTrigonRGBA(*rend, 155, 303, 165, 293, 165, 313, 200, 200, 200, 200);
+    filledTrigonRGBA(*rend, 505, 303, 495, 293, 495, 313, 200, 200, 200, 200);
+
+    SDL_RenderSetScale(*rend, 1, 1);
+    roundedBoxRGBA(*rend, 110 * 2, 245 * 2, 225 * 2, 262 * 2, 10, 0, 0, 50, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, 120, 250, "Select Score", 100, 200, 10, 240);
+
+    SDL_RenderSetScale(*rend, 1, 1);
+    SDL_RenderPresent(*rend);
+}
+
 #endif //ALTERTANK_GRAPH_H
