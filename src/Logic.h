@@ -13,6 +13,7 @@
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include "Move.h"
 #include "HandleEvent.h"
+#include <time.h>
 
 
 Map GetMap(Menu mnu){
@@ -373,6 +374,7 @@ void LoadGame(Tanks* T, Menu* mnu, int* score, int* time){
 }
 
 void NewGame(Tanks* T, Map map){
+    srand(time(0));
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 5; ++j) {
             T->tank[i].bullet[j].haveShoten = 0;

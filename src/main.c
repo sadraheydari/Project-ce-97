@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL2/SDL.h>
+#include <SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include "Graph.h"
 #include "HandleEvent.h"
 #include "Structs.h"
 #include "Move.h"
 #include "Logic.h"
-
+#include <time.h>
 
 
 int main() {
+    srand(time(0));
     int score, time = 0, start, prv;
     Map map;
     Tanks T;
@@ -31,7 +33,6 @@ int main() {
     T.tank[0].clr = blue;
     T.tank[1].clr = red;
     //............................................
-
 
 
     init_window(&window, 680, 600);
