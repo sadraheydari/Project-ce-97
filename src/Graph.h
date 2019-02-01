@@ -47,7 +47,7 @@ void DrawTank(SDL_Renderer** rend, Tank* tank){
 
 void DrawMap(SDL_Renderer** rend, Wall wall, int black){
     for (int i = 0; i < wall.n; ++i) {
-        if(black){thickLineRGBA(*rend, wall.x1[i], wall.y1[i], wall.x2[i], wall.y2[i], 2, 10, 10, 10, 255);}
+        if(black){thickLineRGBA(*rend, wall.x1[i], wall.y1[i], wall.x2[i], wall.y2[i], 3, 10, 10, 10, 255);}
         else{thickLineRGBA(*rend, wall.x1[i], wall.y1[i], wall.x2[i], wall.y2[i], 3, 200, 100, 0, 255);}
     }
 }

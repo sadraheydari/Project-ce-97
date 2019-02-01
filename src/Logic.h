@@ -274,15 +274,26 @@ void TankTouchWall(Tanks* T, Wall wall){
 }
 
 void BulletTouchWall(Tanks* T, Wall wall){
-    int LineDis, inLine;
-    for (int i = 0; i < 4; ++i) {
+    int LineDis, inLine, edge;
+    for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 5; ++j) {
             for (int k = 0; k < wall.n; ++k) {
                 LineDis = LineDistance(T->tank[i].bullet[j].x, T->tank[i].bullet[j].y,
                                         wall.x1[k], wall.y1[k],
-                                        wall.x2[k], wall.y2[k]) <= 3 ;
+                                        wall.x2[k], wall.y2[k]) <= 4 ;
                 inLine = (T->tank[i].bullet[j].x > wall.x1[k] && T->tank[i].bullet[j].x < wall.x2[k]) ||
                          (T->tank[i].bullet[j].y > wall.y1[k] && T->tank[i].bullet[j].y < wall.y2[k]);
+
+                edge = PointDistance(T->tank[i].bullet[j].x, T->tank[i].bullet[j].y, wall.x1[k], wall.y1[k]) <= 4 ||
+                        PointDistance(T->tank[i].bullet[j].x, T->tank[i].bullet[j].y, wall.x2[k], wall.y2[k]) <= 4;
+
+                if(edge && (!inLine)){
+                    if (wall.vertical[k]){
+                        T->tank[i].bullet[j].alphay *= -1;
+                    } else{
+                        T->tank[i].bullet[j].alphax *= -1;
+                    }
+                }
 
                 if( LineDis && inLine ){
                     if (wall.vertical[k]){
