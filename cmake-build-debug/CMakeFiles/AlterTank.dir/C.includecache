@@ -25,26 +25,26 @@ Graph.h
 /home/sadra/CLionProjects/Phase1/src/Graph.h
 
 /home/sadra/CLionProjects/Phase1/src/Logic.h
+time.h
+-
+math.h
+-
 stdio.h
 -
 stdlib.h
 -
-Structs.h
-/home/sadra/CLionProjects/Phase1/src/Structs.h
-math.h
--
-Graph.h
-/home/sadra/CLionProjects/Phase1/src/Graph.h
 SDL2/SDL.h
 -
 SDL2/SDL2_gfxPrimitives.h
 -
+Structs.h
+/home/sadra/CLionProjects/Phase1/src/Structs.h
+Graph.h
+/home/sadra/CLionProjects/Phase1/src/Graph.h
 Move.h
 /home/sadra/CLionProjects/Phase1/src/Move.h
 HandleEvent.h
 /home/sadra/CLionProjects/Phase1/src/HandleEvent.h
-time.h
--
 
 /home/sadra/CLionProjects/Phase1/src/Move.h
 SDL2/SDL.h
@@ -80,6 +80,8 @@ Move.h
 Logic.h
 /home/sadra/CLionProjects/Phase1/src/Logic.h
 time.h
+-
+SDL2/SDL_mixer.h
 -
 
 /usr/include/SDL2/SDL.h

@@ -1,1 +1,1 @@
-/usr/bin/cc -g  -rdynamic CMakeFiles/AlterTank.dir/src/main.c.o  -o AlterTank -lm -lSDL2 -lSDL2_gfx 
+/usr/bin/cc -g  -rdynamic CMakeFiles/AlterTank.dir/src/main.c.o  -o AlterTank -lm -lSDL2 -lSDL2_gfx -lSDL2_mixer 

@@ -8,10 +8,11 @@
 
 double angleplus = 5 * 3.1415 / 180;
 
+const int speed = 3;
+
 void moveTank1(Tank* tank, Escape* esc){
 
     const Uint8 *event = SDL_GetKeyboardState(NULL);
-    const int speed = 3;
 
     if (event[SDL_SCANCODE_UP]) {                        // Move Up;
         if (tank->Permition.Up && sin(tank->angle) > 0) {
@@ -94,8 +95,6 @@ void moveTank1(Tank* tank, Escape* esc){
 void moveTank2(Tank* tank, Escape* esc){
 
     const Uint8 *event = SDL_GetKeyboardState(NULL);
-    const int speed = 3;
-
     if (event[SDL_SCANCODE_W]) {                        // Move Up;
         if (tank->Permition.Up && sin(tank->angle) > 0) {
             tank->y += speed * sin(tank->angle);

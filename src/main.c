@@ -9,9 +9,11 @@
 #include "Move.h"
 #include "Logic.h"
 #include <time.h>
+#include <SDL2/SDL_mixer.h>
 
 
 int main() {
+
     srand(time(0));
     int score, time = 0, start, prv;
     Map map;
@@ -80,6 +82,8 @@ int main() {
 
     prv = SDL_GetTicks();
 
+
+
     while (handleEvents()) {
         SDL_SetRenderDrawColor(renderer, 150, 150, 150, 200);
         SDL_RenderClear(renderer);
@@ -90,7 +94,7 @@ int main() {
         if(esc.exist){
             mnu.Exit = mnu.SaveGame = 0;
             while (handleMinMenu(&mnu)){
-               DrawMinMenu(&renderer, mnu, T);
+                DrawMinMenu(&renderer, mnu, T);
             }
             esc.exist = 0;
             if(mnu.SaveGame){ SaveGame(T, mnu, score, time);}
@@ -159,7 +163,6 @@ int main() {
         SDL_Delay(1000 / FPS);
 
     }
-
     quit_window(&window);
 
 

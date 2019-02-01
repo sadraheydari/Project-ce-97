@@ -4,16 +4,16 @@
 
 #ifndef ALTERTANK_LOGIC_H
 #define ALTERTANK_LOGIC_H
+#include <time.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "Structs.h"
-#include <math.h>
-#include "Graph.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
+#include "Structs.h"
+#include "Graph.h"
 #include "Move.h"
 #include "HandleEvent.h"
-#include <time.h>
 
 
 Map GetMap(Menu mnu){
@@ -316,7 +316,7 @@ void BulletTouchTank(Tanks* T){
                 if (T->tank[k].exist){
 
                     if (T->tank[j].bullet[i].haveShoten) {
-                        if (PointDistance(T->tank[k].x, T->tank[k].y, T->tank[j].bullet[i].x, T->tank[j].bullet[i].y) < (T->tank[k].Radius * 7 / 8)) {
+                        if (PointDistance(T->tank[k].x, T->tank[k].y, T->tank[j].bullet[i].x, T->tank[j].bullet[i].y) < (T->tank[k].Radius * 9/10)) {
                             T->tank[k].exist = 0;
                             T->tank[k].ShootTime = SDL_GetTicks();
                             T->tank[j].bullet[i].haveShoten = 0;
