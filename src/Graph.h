@@ -9,8 +9,6 @@
 #include "Structs.h"
 #include "Logic.h"
 
-
-
 void init_window(SDL_Window** window, int deltax, int deltay){
 
     *window = SDL_CreateWindow("Sadra AlterTank",
@@ -377,6 +375,118 @@ void DrawScoreMenu(SDL_Renderer** rend, int score){
     roundedBoxRGBA(*rend, 110 * 2, 245 * 2, 225 * 2, 262 * 2, 10, 0, 0, 50, 255);
     SDL_RenderSetScale(*rend, 2, 2);
     stringRGBA(*rend, 120, 250, "Select Score", 100, 200, 10, 240);
+
+    SDL_RenderSetScale(*rend, 1, 1);
+    SDL_RenderPresent(*rend);
+}
+
+void DrawWelcome(SDL_Renderer** rend, double * agl){
+    SDL_SetRenderDrawColor(*rend, 150, 150, 150, 200);
+    SDL_RenderClear(*rend);
+
+    SDL_RenderSetScale(*rend, 3, 3);
+    stringRGBA(*rend, 90, 10, "WELCOME", 10, 10, 10, 150);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+
+
+    filledCircleRGBA(*rend, 50, 300, 20, 100, 0, 0, 150);
+    filledCircleRGBA(*rend, 50, 300, 20 * 2 / 3, 150, 150, 150, 255);
+    filledCircleRGBA(*rend, 50, 300, 20 * 4 / 5, 100, 0, 0, 150);
+    thickLineRGBA(*rend, 50, 300, 50 + 20 * cos(3.1415/4) * 1.05, 300 + 20 * sin(3.1415/4) * 1.05,20 * 15/20, 150, 150, 150, 255);
+    filledCircleRGBA(*rend, 50, 300, 10, 100, 0, 0, 255);
+    thickLineRGBA(*rend, 50, 300, 50 + 20 * cos(3.1415/4), 300 + 20 * sin(3.1415/4), 5, 50, 0, 0, 255);
+
+
+    filledCircleRGBA(*rend, 630, 300, 20, 0, 0, 100, 150);
+    filledCircleRGBA(*rend, 630, 300, 20 * 2 / 3, 150, 150, 150, 255);
+    filledCircleRGBA(*rend, 630, 300, 20 * 4 / 5, 0, 0, 100, 150);
+    thickLineRGBA(*rend, 630, 300, 630 + 20 * cos(3*3.1415/4) * 1.05, 300 + 20 * sin(3*3.1415/4) * 1.05,20 * 15/20, 150, 150, 150, 255);
+    filledCircleRGBA(*rend, 630, 300, 10, 0, 0, 100, 255);
+    thickLineRGBA(*rend, 630, 300, 630 + 20 * cos(3*3.1415/4), 300 + 20 * sin(3*3.1415/4), 5, 0, 0, 50, 255);
+
+    int x = 120;
+    int y = 300;
+
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 100, 40, 40, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "A", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    x += (40+5);
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 100, 40, 40, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "S", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    y -=(40+5);
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 100, 40, 40, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "W", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    x += (40+5);y +=(40+5);
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 100, 40, 40, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "D", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    x += (40+20);
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 100, 70, 70, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "R", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    x += 100;
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 70, 70, 100, 200);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "P", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    x += (40+20);
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 70, 70, 100, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "J", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    x += (40+5);
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 70, 70, 100, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "K", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    y-=(40+5);
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 70, 70, 100, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "I", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    x += (40+5);y+=(40+5);
+    roundedBoxRGBA(*rend, x, y, x+40, y+40, 10, 70, 70, 100, 255);
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, (x+13)/2, (y+13)/2, "L", 150, 200, 150, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+
+    SDL_RenderSetScale(*rend, 1.5, 1.5);
+    stringRGBA(*rend, 115/1.5, 120/1.5, "Mohammad Sadra Heydari's CE Project 1397", 50, 50, 10, 200);
+
+    SDL_RenderSetScale(*rend, 2, 2);
+    stringRGBA(*rend, 240/2, 500/2, "Loading", 20, 20, 1, 200);
+    SDL_RenderSetScale(*rend, 1, 1);
+
+    x = 375;
+    y = 510;
+
+
+    thickLineRGBA(*rend, x+10*cos(*agl), y+10*sin(*agl), x+15*cos(*agl), y+15*sin(*agl)                                            , 7, 100, 100, 10, 100);
+    thickLineRGBA(*rend, x+10*cos(*agl+1*3.1415/8), y+10*sin(*agl+1*3.1415/8), x+15*cos(*agl+1*3.1415/8), y+15*sin(*agl+1*3.1415/8), 7, 100, 100, 10, 150);
+    thickLineRGBA(*rend, x+10*cos(*agl+2*3.1415/8), y+10*sin(*agl+2*3.1415/8), x+15*cos(*agl+2*3.1415/8), y+15*sin(*agl+2*3.1415/8), 7, 100, 100, 10, 200);
+    thickLineRGBA(*rend, x+10*cos(*agl+3*3.1415/8), y+10*sin(*agl+3*3.1415/8), x+15*cos(*agl+3*3.1415/8), y+15*sin(*agl+3*3.1415/8), 7, 100, 100, 10, 250);
+
+    *agl += 3.1415/8;
+
+    SDL_Delay(50);
 
     SDL_RenderSetScale(*rend, 1, 1);
     SDL_RenderPresent(*rend);

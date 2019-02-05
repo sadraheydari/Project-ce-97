@@ -41,12 +41,9 @@ typedef struct {
     unsigned long long int time;
 }Laser;
 
-
 typedef struct {
     double Up, Down, Left, Right;
 }Zone;
-
-
 
 typedef struct {
     int Up;
@@ -54,7 +51,6 @@ typedef struct {
     int Left;
     int Right;
 }MovePermision;
-
 
 typedef struct {
     int exist;
@@ -75,12 +71,10 @@ typedef struct {
     Laser laser;
 }Tank;
 
-
 typedef struct {
     Tank tank[4];
     int Number;
 }Tanks;
-
 
 typedef struct {
     int n;

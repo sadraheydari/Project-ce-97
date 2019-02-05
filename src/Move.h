@@ -14,7 +14,7 @@ void moveTank1(Tank* tank, Escape* esc){
 
     const Uint8 *event = SDL_GetKeyboardState(NULL);
 
-    if (event[SDL_SCANCODE_UP]) {                        // Move Up;
+    if (event[SDL_SCANCODE_I]) {                        // Move Up;
         if (tank->Permition.Up && sin(tank->angle) > 0) {
             tank->y += speed * sin(tank->angle);
         }
@@ -29,7 +29,7 @@ void moveTank1(Tank* tank, Escape* esc){
         }
     }
 
-    if (event[SDL_SCANCODE_DOWN]) {                      // Move Down;
+    if (event[SDL_SCANCODE_K]) {                      // Move Down;
         if (tank->Permition.Up && sin(tank->angle) < 0) {
             tank->y -= speed * sin(tank->angle);
         }
@@ -44,16 +44,16 @@ void moveTank1(Tank* tank, Escape* esc){
         }
 
     }
-    if (event[SDL_SCANCODE_LEFT]) {                      // Turn Left;
+    if (event[SDL_SCANCODE_J]) {                      // Turn Left;
         tank->angle -= angleplus;
     }
-    if (event[SDL_SCANCODE_RIGHT]) {                     // Turn Right;
+    if (event[SDL_SCANCODE_L]) {                     // Turn Right;
         tank->angle += angleplus;
     }
     tank->laser.angle = tank->angle;
     tank->laser.x = tank->x;
     tank->laser.y = tank->y;
-    if (event[SDL_SCANCODE_SPACE]) {
+    if (event[SDL_SCANCODE_P]) {
 
         if ((SDL_GetTicks() - tank->lastTime) > 200) {
 
@@ -135,7 +135,7 @@ void moveTank2(Tank* tank, Escape* esc){
     tank->laser.x = tank->x;
     tank->laser.y = tank->y;
 
-    if (event[SDL_SCANCODE_5]) {
+    if (event[SDL_SCANCODE_R]) {
 
         if ((SDL_GetTicks() - tank->lastTime) > 200) {
 

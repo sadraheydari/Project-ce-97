@@ -1,7 +1,6 @@
 //
 // Created by sadra on 12/29/18.
 //
-
 #ifndef ALTERTANK_LOGIC_H
 #define ALTERTANK_LOGIC_H
 #include <time.h>
@@ -14,7 +13,6 @@
 #include "Graph.h"
 #include "Move.h"
 #include "HandleEvent.h"
-
 
 Map GetMap(Menu mnu){
 

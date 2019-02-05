@@ -45,6 +45,12 @@ int main() {
         return 1;
     }
 
+    //Welcome Menu .........................................
+    double agl = 0;
+    while (SDL_GetTicks() < 5000){
+        DrawWelcome(&renderer, &agl);
+    }
+    //......................................................
 
     //Start Menu ...........................................
     while (handleStartMenu(&mnu)){

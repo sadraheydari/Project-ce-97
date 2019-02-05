@@ -206,5 +206,4 @@ int handleSetScore(Menu* mnu, int* score){
     return 1;
 }
 
-
 #endif //ALTERTANK_HANDLEEVENT_H
