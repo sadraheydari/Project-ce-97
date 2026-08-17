@@ -1,4 +1,0 @@
-/home/sadra/Desktop/clion-2018.3.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/sadra/CLionProjects/Phase1
--- Configuring done
--- Generating done
--- Build files have been written to: /home/sadra/CLionProjects/Phase1/cmake-build-debug

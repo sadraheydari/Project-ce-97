@@ -1,3 +1,0 @@
-/home/sadra/CLionProjects/Phase1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/sadra/CLionProjects/Phase1/cmake-build-debug/CMakeFiles/AlterTank.dir
-/home/sadra/CLionProjects/Phase1/cmake-build-debug/CMakeFiles/edit_cache.dir
